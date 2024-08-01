@@ -1,0 +1,94 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+	Layout = "_CarLayout";
+}
+
+
+<section id="home" class="welcome-hero" style="background-image:url('assets/images/welcome-hero/welcome-banner.jpg')">
+
+	<div class="container">
+	<div class="welcome-hero-txt">
+	 
+		<h2>get your desired car in resonable price</h2>
+		<p>
+			feel free to ask any question about cars . 
+		</p>
+			<button class="welcome-btn" onclick="window.location.href='#'"><a asp-action="ContactUs" asp-controller="Car">contact us</a></button>
+	</div>
+</div>
+</section>
+
+
+
+<!--new-cars start -->
+<section style="display:block" id="new-cars" class="new-cars">
+	<div class="container">
+		<div class="section-header">
+			<p>checkout <span>the</span> latest cars</p>
+			<h2>newest cars</h2>
+		</div><!--/.section-header-->
+		
+		<div class="new-cars-content">
+			<div class="owl-carousel owl-theme" id="new-cars-carousel">
+				<div class="new-cars-item">
+					<div class="single-new-cars-item">
+						<div class="row">
+							<div class="col-md-7 col-sm-12">
+								<div class="new-cars-img">
+									<img src="~/assets/images/new-cars-model/ncm1.png" alt="img"/>
+								</div><!--/.new-cars-img-->
+							</div>
+							<div class="col-md-5 col-sm-12">
+								<div class="new-cars-txt">
+									<h2><a href="#">chevrolet camaro <span> za100</span></a></h2>
+									<br /> 
+									<h3> one of the most speed car in the world </h3>
+								 
+								</div><!--/.new-cars-txt-->
+							</div><!--/.col-->
+						</div><!--/.row-->
+					</div><!--/.single-new-cars-item-->
+				</div><!--/.new-cars-item-->
+				<div class="new-cars-item">
+					<div class="single-new-cars-item">
+						<div class="row">
+							<div class="col-md-7 col-sm-12">
+								<div class="new-cars-img">
+									<img src="~/assets/images/new-cars-model/ncm2.png" alt="img" />
+								</div><!--/.new-cars-img-->
+							</div>
+							<div class="col-md-5 col-sm-12">
+								<div class="new-cars-txt">
+									<h2><a href="#">BMW series-3 wagon</a></h2>
+									<h3> one of the most speed car in the world </h3>
+
+								</div><!--/.new-cars-txt-->
+							</div><!--/.col-->
+						</div><!--/.row-->
+					</div><!--/.single-new-cars-item-->
+				</div><!--/.new-cars-item-->
+				<div class="new-cars-item">
+					<div class="single-new-cars-item">
+						<div class="row">
+							<div class="col-md-7 col-sm-12">
+								<div class="new-cars-img">
+									<img src="~/assets/images/new-cars-model/ncm3.png" alt="img" />
+								</div><!--/.new-cars-img-->
+							</div>
+							<div class="col-md-5 col-sm-12">
+								<div class="new-cars-txt">
+									<h2><a href="#">ferrari 488 superfast</a></h2>
+									<h3> one of the most speed car in the world </h3>
+
+								</div><!--/.new-cars-txt-->
+							</div><!--/.col-->
+						</div><!--/.row-->
+					</div><!--/.single-new-cars-item-->
+				</div><!--/.new-cars-item-->
+			</div><!--/#new-cars-carousel-->
+		</div><!--/.new-cars-content-->
+	</div><!--/.container-->
+
+</section><!--/.new-cars-->
+<!--new-cars end -->
+

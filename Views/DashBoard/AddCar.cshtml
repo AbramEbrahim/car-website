@@ -1,0 +1,106 @@
+﻿@model car_web.ViewModel.CarViewModel
+@{
+    Layout = "_DashBoard";
+}
+
+
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-tachometer-fast-alt"></i>
+        <span class="text">Adding Car</span>
+    </div>
+
+    <div>
+        <form class="row" method="post" asp-action="AddCar" enctype="multipart/form-data">
+            <input type="text" asp-for="car.Id"  class="d-none">
+           
+
+            <div class="mb-3">
+                <label asp-for="car.Name" class="form-label">Car Name</label>
+                <input type="text"
+                       asp-for="car.Name"
+                       class="form-control"
+                       placeholder="" />
+                <span asp-validation-for="car.Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="car.BodyStyle" class="form-label">Car BodyStyle</label>
+                <input type="text"
+                       asp-for="car.BodyStyle"
+                       class="form-control"
+                       placeholder="" />
+                <span asp-validation-for="car.BodyStyle" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="car.CarModel" class="form-label">Car Model</label>
+                <input type="text"
+                       asp-for="car.CarModel"
+                       class="form-control"
+                       placeholder="" />
+                <span asp-validation-for="car.CarModel" class="text-danger"></span>
+            </div>
+
+            @* <div class="mb-3">
+                <label asp-for="car.Img" class="form-label">Car Img</label>
+                <input type="text"
+                       asp-for="car.Img"
+                       class="form-control"
+                       placeholder="" />
+                <span asp-validation-for="car.Img" class="text-danger"></span>
+            </div> *@
+
+        
+
+            <div class="mb-3">
+                <label asp-for="car.CarImg" class="form-label">Car Img</label>
+                <input asp-for="car.CarImg"
+                       class="form-control"
+                       placeholder="" />
+                <span asp-validation-for="car.CarImg" class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3 col-lg-6">
+                <label asp-for="car.Price" class="form-label">car Price</label>
+                <input type="number"
+                       asp-for="car.Price"
+                       id=""
+                       class="form-control"
+                       placeholder=""></input>
+                <span asp-validation-for="car.Price" class="text-danger"></span>
+            </div>
+
+            
+
+            <div class="mb-3 col-lg-6">
+                <label asp-for="car.combanyId" class="form-label">company</label>
+                <select class="form-select "
+                        asp-for="car.combanyId">
+
+                    @{
+                        foreach (var item in Model.combanies)
+
+                        {
+                        <option value="@item.Id">@item.Name</option>
+                            
+                        }
+                            
+
+                    }
+
+                </select>
+                <span asp-validation-for="car.combanyId" class="text-danger"></span>
+            </div>
+
+
+            <div class="col-lg-12 d-flex justify-content-center  ">
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+        </form>
+
+    </div>
+</div>

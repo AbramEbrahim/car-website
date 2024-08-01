@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="~/css/Dashboard Style/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Dashboard Style/boostrap/css/bootstrap.min.css" asp-append-version="true">
+
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title>
+
+    <style>
+        ul{
+            box-shadow: 1px 1px 10px 1px #0a58ca;
+            border-radius:10px;
+        }
+
+        li:hover{
+            border-bottom: 2px solid #0a58ca ;
+            color:white;
+            
+        }
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+             
+            <a asp-action="Index" asp-controller="Car"><span class="logo_name">Your-Car</span></a>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li>
+                    <a asp-action="index" asp-controller="Dashboard">
+                        <i class="uil uil-comments"></i>
+                        <span class="link-name">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-action="GetCar" asp-controller="Dashboard">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">View Car</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-action="AddCar" asp-controller="Dashboard">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">Add Car</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-action="GetCompany" asp-controller="Dashboard">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">View Company</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a asp-action="AddCompany" asp-controller="Dashboard">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Add Company</span>
+                    </a>
+                </li>
+                @* <li>
+                    <a href="#">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Add Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-comments"></i>
+                        <span class="link-name">View Blog</span>
+                    </a>
+                </li> *@
+            </ul>
+
+            <ul class="logout-mode">
+                <li>
+                    <a asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="Logout">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name" >Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    
+
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle ">@User.Identity.Name</i>
+        </div>
+
+        <div class="dash-content">
+            
+                @RenderBody()
+            
+
+           
+        </div>
+
+    </section>
+    <script  src="~/js/Dashboard js/boostrap/js/bootstrap.min.js" 
+    asp-append-version="true"></script>
+    <script  src="~/js/Dashboard js/script.js" asp-append-version="true"></script>
+
+</body>
+</html>

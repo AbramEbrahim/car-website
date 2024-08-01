@@ -1,0 +1,53 @@
+﻿ @model IEnumerable<Combany>
+@{
+    Layout = "_DashBoard";
+}
+<h3>
+    number of Companies : @Model.Count()
+</h3>
+
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-tachometer-fast-alt"></i>
+        <span class="text"> View company</span>
+    </div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td class="table-light">id</td>
+                    <td class="table-light">Name</td>
+                      
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var Company in Model)
+                {
+                    <tr>
+                        <td>@Company.Id</td>
+                        <td>@Company.Name</td>
+                       
+ 
+                        <td>
+
+                            <a asp-action="EditCompany" asp-route-id="@Company.Id" class="btn btn-success" role="button">
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </a>
+                            <a asp-action="DeleteCompany" asp-route-id="@Company.Id" class="btn btn-danger " role="button">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Contact>
+@{
+    Layout = "_DashBoard";
+}
+
+
+
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-comments"></i>
+        <span class="text">Messages</span>
+    </div>
+</div>
+
+<div class="activity">
+       
+    <div class="activity-data">
+         @foreach(var m in Model)
+        {
+        <div class="data names">
+            <span class="data-title">Name</span>
+            <span class="data-list">@m.Name</span>
+             
+        </div>
+        <div class="data email">
+            <span class="data-title">Email</span>
+            <span class="data-list">@m.Email</span>
+             
+        </div>
+        
+        <div class="data type">
+            <span class="data-title">Subject</span>
+            <span class="data-list">@m.Subject</span>
+           
+        </div>
+        <div class="data status">
+            <span class="data-title">Message</span>
+            <span class="data-list">@m.Message</span>
+          
+        </div>
+        }
+    </div>
+</div>

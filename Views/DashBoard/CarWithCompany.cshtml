@@ -1,0 +1,75 @@
+﻿@model CarViewModel
+@{
+    Layout = "_CarLayout";
+}
+  
+ 
+
+<section  class="welcome-hero" style="margin-bottom:300px; ">
+    <img src="~/assets/images/welcome-hero/welcome-banner.jpg" />
+     
+<div class="container" style="margin-top:-200px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="model-search-content">
+                <div class="row">
+                    
+            @* <h1 style="font-size:33px;color:dodgerblue">Brands</h1> *@
+        @foreach(var b in Model.combanies)
+        {
+          <div class="col-md-offset-1 col-md-2 col-sm-12">
+             <div class="single-model-search">
+                <a class="nav-link" asp-action="CarWithCompany" asp-controller="DashBoard" asp-route-id="@b.Id">@b.Name</a>
+            </div>
+          </div>
+        }
+        </div>
+        </div>
+        </div>
+        </div>
+
+        </div>
+
+</section>
+
+
+            <div class="container">
+                <div class="row">
+        @foreach (var c in Model.cars)
+        {
+
+               
+            <div class="col-md-4 col-sm-12 ">
+
+                <article class="card">
+                    <img class="card__background"
+                         src="~/assets/@c.Img"
+                         alt="can`t load photo "
+                         width="1920"
+                         height="2193"/>
+                    <div class="card__content | flow">
+                        <div class="card__content--container | flow">
+                            <h2 class="card__title">@c.Name</h2>
+
+                            <p class="card__description">
+                                company :@c.Combany.Name
+                                <br />
+                                car model : @c.CarModel
+                                <br />
+                                body :@c.BodyStyle
+                                <br />
+                                price :@c.Price
+                                <br />
+                            </p>
+                        </div>
+                        @* <button class="card__button">Read more</button> *@
+                    </div>
+                </article>
+
+            </div>
+        }
+                </div>
+            </div>
+     
+<br />
+<br />

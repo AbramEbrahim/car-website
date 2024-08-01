@@ -1,0 +1,164 @@
+﻿
+@model IEnumerable<Car>
+@{
+    Layout = "_CarLayout";
+}
+  
+
+<section id="home" class="welcome-hero">
+	<img src="~/assets/images/welcome-hero/welcome-banner.jpg"/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="model-search-content">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-2 col-sm-12">
+						<div class="single-model-search">
+							<h2>select year</h2>
+							<div class="model-select-icon">
+								<select class="form-control">
+									<option value="default">year</option><!-- /.option-->
+
+									<option value="2018">2018</option><!-- /.option-->
+
+									<option value="2017">2017</option><!-- /.option-->
+									<option value="2016">2016</option><!-- /.option-->
+
+								</select><!-- /.select-->
+							</div><!-- /.model-select-icon -->
+						</div>
+						<div class="single-model-search">
+							<h2>body style</h2>
+							<div class="model-select-icon">
+								<select class="form-control">
+
+									<option value="default">style</option><!-- /.option-->
+
+									<option value="sedan">sedan</option><!-- /.option-->
+
+									<option value="van">van</option><!-- /.option-->
+									<option value="roadster">roadster</option><!-- /.option-->
+
+								</select><!-- /.select-->
+							</div><!-- /.model-select-icon -->
+						</div>
+					</div>
+					<div class="col-md-offset-1 col-md-2 col-sm-12">
+						<div class="single-model-search">
+							<h2>select make</h2>
+							<div class="model-select-icon">
+								<select class="form-control">
+
+									<option value="default">make</option><!-- /.option-->
+
+									<option value="toyota">toyota</option><!-- /.option-->
+
+									<option value="holden">holden</option><!-- /.option-->
+									<option value="maecedes-benz">maecedes-benz.</option><!-- /.option-->
+
+								</select><!-- /.select-->
+							</div><!-- /.model-select-icon -->
+						</div>
+						<div class="single-model-search">
+							<h2>car condition</h2>
+							<div class="model-select-icon">
+								<select class="form-control">
+
+									<option value="default">condition</option><!-- /.option-->
+
+									<option value="something">something</option><!-- /.option-->
+
+									<option value="something">something</option><!-- /.option-->
+									<option value="something">something</option><!-- /.option-->
+
+								</select><!-- /.select-->
+							</div><!-- /.model-select-icon -->
+						</div>
+					</div>
+					<div class="col-md-offset-1 col-md-2 col-sm-12">
+						<div class="single-model-search">
+							<h2>select model</h2>
+							<div class="model-select-icon">
+								<select class="form-control">
+
+									<option value="default">model</option><!-- /.option-->
+
+									<option value="kia-rio">kia-rio</option><!-- /.option-->
+
+									<option value="mitsubishi">mitsubishi</option><!-- /.option-->
+									<option value="ford">ford</option><!-- /.option-->
+
+								</select><!-- /.select-->
+							</div><!-- /.model-select-icon -->
+						</div>
+						<div class="single-model-search">
+							<h2>select price</h2>
+							<div class="model-select-icon">
+								<select class="form-control">
+									<option value="default">price</option><!-- /.option-->
+									<option value="$0.00">$0.00</option><!-- /.option-->
+									<option value="$0.00">$0.00</option><!-- /.option-->
+									<option value="$0.00">$0.00</option><!-- /.option-->
+								</select><!-- /.select-->
+							</div><!-- /.model-select-icon -->
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-12">
+						<div class="single-model-search text-center">
+							<button class="welcome-btn model-search-btn" onclick="window.location.href='#'">
+								search
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+<br><br><br><br><br><br>
+<br>
+
+ 
+ <div class="container">
+	<div class="row">
+
+		@foreach (var c in Model)
+		{
+
+			<div class="col-md-4 col-sm-12 ">
+
+ <article class="card">
+  <img
+    class="card__background"
+	src="~/assets/@c.Img"
+    alt="can`t load photo "
+    width="1920"
+    height="2193"
+  />
+  <div class="card__content | flow">
+    <div class="card__content--container | flow">
+	<h2 class="card__title">@c.Name</h2>
+	
+      <p class="card__description">
+        company :@c.Combany.Name
+		<br />
+		car model : @c.CarModel
+		<br />
+		body :@c.BodyStyle
+		<br />
+		price :@c.Price
+		<br />
+      </p>
+    </div>
+    @* <button class="card__button">Read more</button> *@
+  </div>
+</article>
+
+</div>
+}
+		</div>
+		</div>
+		<br /><br />
+  

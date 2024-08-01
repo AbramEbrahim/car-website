@@ -1,0 +1,65 @@
+﻿ @model IEnumerable<Car>
+@{
+    Layout = "_DashBoard";
+}
+<h3>
+   number of cars : @Model.Count()
+</h3>
+
+<div class="overview">
+    <div class="title">
+        <i class="uil uil-tachometer-fast-alt"></i>
+        <span class="text"> View Car</span>
+    </div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td class="table-light">id</td>
+                    <td class="table-light">Name</td>
+                    <td class="table-light">Body Style</td>
+                    <td class="table-light">Car Model</td>
+                    <td class="table-light">price</td>
+                    <td class="table-light">Image </td>
+                     
+                    <td class="table-light">Company Name</td>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var Car in Model)
+                {
+                    <tr>
+                        <td>@Car.Id</td>
+                        <td>@Car.Name</td>
+                        <td>@Car.BodyStyle</td>
+                        <td>@Car.CarModel</td>
+                        <td>@Car.Price</td>
+                        
+                        <td>    <img src="~/assets/@Car.Img" width="100px" height="100px" ></td>
+                        <td>@Car.Combany.Name</td>
+
+
+                        <td>
+
+                            <a asp-action="EditCar" asp-route-id="@Car.Id" class="btn btn-success" role="button">
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </a>
+                            <a asp-action="DeleteCar" asp-route-id="@Car.Id" class="btn btn-danger " role="button">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
